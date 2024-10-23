@@ -1,0 +1,33 @@
+/* select by element tab */
+h1 {
+    color: red;
+}
+
+h2 {
+    color: blue;
+}
+
+header {
+    color: green;
+}
+
+header h1 {
+    color: yellow;
+}
+/* select by id */
+#service {
+    background-color: aqua;
+}
+
+/* select by class name */
+.container .card {
+    color: lime;
+}
+
+.card {
+    color: purple;
+}
+
+.container h1 {
+    color: red;
+}

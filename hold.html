@@ -1,0 +1,80 @@
+const companies = [
+    {name:"company one", category: "retails", start: 1992, end: 2024},
+    {name:"company two", category: "finance", start: 1971, end: 2020},
+    {name:"company three", category: "wholesales", start: 1988, end: 1999},
+    {name:"company four", category: "wholesales", start: 1996, end: 2010},
+    {name:"company five", category: "retails", start: 1960, end: 2004},
+    {name:"company six", category: "finance", start: 1992, end: 2011},
+    {name:"company seven", category: "finance", start: 1986, end: 2009},
+    {name:"company eight", category: "retails", start: 1977, end: 2012},
+    {name:"company nine", category: "retails", start: 1992, end: 2006},
+    {name:"company ten", category: "wholesales", start: 1992, end: 1997}];
+const ages = [33,12,45,77,60,23,7,80,55,67,29,16];
+// simply for loop
+// for(let i =0; i <companies.length; i++){
+//     console.log(companies[i]);
+// }
+// array foreach
+companies.forEach((company) => {
+    console.log(company.start);
+    company.start++;
+    console.log(company.start);
+});
+// foreach example 1
+ages.forEach((age,index)=>{
+    if (index % 2) {
+//        console.log(age)
+//        age = age/2;
+//        console.log(age);
+//        ages[index]=age;
+//    }
+// });
+//for each example 2
+// total = 0;
+// ages.forEach(age => {
+//    total = total + age;
+// });
+// console.log(total);
+// filter example
+let adult = [];
+for (let i = 0; i < ages.length; i++) {
+    if (ages[i] >=18) {
+        adult.push(ages[i]);
+    }
+}
+console.log(adult);
+let adult1 = ages.filter(age=>(age >= 18));
+console.log(adult1);
+console.log(adult1);
+const retailsCompanies=companies.filter(company=>(company.category === 'retails'));
+console.log(retailsCompanies);
+oldCompanies=retailsCompanies.filter(company=>((company.end - company.start) > 20));
+console.log(oldCompanies);
+
+// map
+const companyNames = companies.map(company=>company.name);
+console.log(companyNames);
+const testMap = companies.map(company=>`${company.name} [${company.start} - ${company.end}]`);
+console.log(testMap);
+
+
+
+
+
+k= 0;
+x = (callback)=> {
+    // let callback = y
+    console.log("i am from function expression !");
+    return callback();
+}
+y = ()=> {
+    console.log("i am from second function expression !");
+    return 1;
+}
+w = ()=> {
+    console.log("i am from third function expression !");
+    return 2;
+}
+if (k==0) {a = x(y);} else {a =x(w);}
+// a = k==0 ? x(y): x(w);
+console.log(a);
