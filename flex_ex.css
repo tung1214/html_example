@@ -43,6 +43,10 @@ header {
  /*   color: grey; */
 }
 
+a:hover {
+    color: rgb(255, 110, 7);
+}
+
 main {
     display: flex;
     /* padding: 40px; */
@@ -76,11 +80,35 @@ aside li {
     border-bottom: 1px solid #ccc;
 }
 
-
-a:hover {
-    color: rgb(255, 110, 7);
-}
 /* .container {
     width: 900px;
     margin: auto;
 } */
+
+@media (max-width: 768px) {
+    .header {
+        padding: 20px;
+    }
+    .header h1 {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+    .nav-list {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-list li {
+        border-bottom: 1px solid #ccc;
+        padding-bottom: 8px;
+    }
+    li.last-item {
+        border: none;
+    }
+    main {
+        flex-direction: column-reverse;
+    }
+    main aside {
+        width: 100%;
+        text-align: center;
+    }
+}

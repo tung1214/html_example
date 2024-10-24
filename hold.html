@@ -20,21 +20,21 @@ companies.forEach((company) => {
     company.start++;
     console.log(company.start);
 });
-// foreach example 1
+ foreach example 1
 ages.forEach((age,index)=>{
     if (index % 2) {
-//        console.log(age)
-//        age = age/2;
-//        console.log(age);
-//        ages[index]=age;
-//    }
-// });
+        console.log(age)
+        age = age/2;
+        console.log(age);
+        ages[index]=age;
+    }
+ });
 //for each example 2
-// total = 0;
-// ages.forEach(age => {
-//    total = total + age;
-// });
-// console.log(total);
+ total = 0;
+ ages.forEach(age => {
+    total = total + age;
+ });
+ console.log(total);
 // filter example
 let adult = [];
 for (let i = 0; i < ages.length; i++) {
@@ -58,6 +58,46 @@ const testMap = companies.map(company=>`${company.name} [${company.start} - ${co
 console.log(testMap);
 
 
+
+a = [5,2,6,10,7,33];
+max_value = (a,b)=>(a> b ? a:b);
+function max_sequence(a) {
+    let result = a[0];
+    for (let e of a) {
+        result = max_value(result,e);
+    }
+    return result;
+}
+console.log(max_sequence(a));
+// case 2
+min_value = (a,b)=> (a< b ? a:b)
+function min_sequence(a) {
+    let result = a[0];
+    for (let e of a) {
+        result = min_value(result,e);
+    }
+    return result;
+}
+console.log(min_sequence(a));
+// case 3
+function reduce(fn,a) {
+    if (a.length === 0) {
+        return console.log("can't compute empty array !")
+    }
+    if (a.length === 1) {
+        return a[0]
+    }
+    if (a.length > 1) {
+        let result = a[0];
+    for (let x = 1; x < a.length; x++) {
+        result = fn(result,a[x]);
+    }
+        return result;        
+    }
+}
+console.log(reduce(max_value,a));
+console.log(reduce(min_value,a));
+console.log(reduce((a,b)=>a+b,a));
 
 
 
